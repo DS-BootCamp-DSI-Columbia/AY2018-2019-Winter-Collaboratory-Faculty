@@ -1,4 +1,4 @@
-[**[Direct ENTER]**](/Bootcamp-materials/Course-Info.md) for bootcamp materials. [**Apply for the boot camp**](https://goo.gl/forms/1UiJgkoN2FFSMYBu1) (Deadline 11:59pm 12/17/2018)
+[**[Direct ENTER]**](/Bootcamp-materials/) for bootcamp materials. [**Apply for the boot camp**](https://goo.gl/forms/1UiJgkoN2FFSMYBu1) (Deadline 11:59pm 12/17/2018)
 
 ![collaboratory logo](Misc-files/collaboratory2.png)
 
@@ -20,7 +20,7 @@ The boot camp's mission is to enable Columbia faculty members, postdoctoral rese
 	- [January 9th – 11th, 2019] Data Science Skill Camp
 	- [January 14th – 15th, 2019] Capstone project, a Data Science Research Intensive Camp
 
-- **Where**: see [bootcamp description](/Bootcamp-materials/Course-Info.md)
+- **Where**: see [bootcamp description](/Bootcamp-materials/README.md)
 
 [comment]: # (Columbia Entrepreneurship Design Studio, Room 430 of the Riverside # Church (490 Riverside Dr, New York, NY 10027) )
 
@@ -35,7 +35,7 @@ The boot camp's mission is to enable Columbia faculty members, postdoctoral rese
 
 - **Who** should apply: Columbia full-time **faculty**, postdoctoral researchers and senior Ph.D. students who have working knowledge of programming and data analytics, and are ready to sharpen their skills to include a training in data science research skills, and/or to create a data science teaching module in a course they teach, and/or to initiate a project in data science. **Seats are limited** (30 for each module), and we will give **priority** to faculty who have applied to or are considering applying to the [Collaboratory fellows fund](http://entrepreneurship.columbia.edu/collaboratory/collaboratory-fellows-fund/).
 
-- Click [here](https://github.com/DS-BootCamp-Collaboratory-Columbia/AY2017-2018-Winter/blob/master/Bootcamp-materials/Course-Info.md) to **START** (detailed course information and setup instructions.)
+- Click [here](https://github.com/DS-BootCamp-Collaboratory-Columbia/AY2017-2018-Winter/blob/master/Bootcamp-materials/README.md) to **START** (detailed course information and setup instructions.)
 
 [**Apply for the boot camp**](https://goo.gl/forms/1UiJgkoN2FFSMYBu1) (Deadline 11:59pm 12/17/2018)
 
