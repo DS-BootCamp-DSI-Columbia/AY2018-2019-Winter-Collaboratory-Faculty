@@ -2,11 +2,16 @@
 
 ## [Collaboratory@Columbia](http://collaboratory.columbia.edu/)
 ### Columbia [Data Science Institute](http://datascience.columbia.edu/) and [Columbia Enterpreneuship](http://entrepreneurship.columbia.edu/)
-## Winter 2017-2018 Data Science Bootcamp
+## Winter 2018-2019 Data Science Bootcamp
 
-- When: January 8th – 12th, 2018
-- Where: Design Studio, Room 430 of the Riverside Church (490 Riverside Dr, New York, NY 10027)
-- Daily schedule: 10am to 4pm (9am to 10am, Introduction January 8th)
+- When: January 9th – 15th, 2019
+- Where: Design Studio*, Room 430 of the [Riverside Church (490 Riverside Dr, New York, NY 10027)](https://www.google.com/maps/dir//40.8112215,-73.963428/@40.8113575,-73.9638732,19z/data=!4m2!4m1!3e3)
+	 
+	 *Unless otherwise noted.
+	 
+- Daily schedule: 10am** to 4pm 
+
+	**(9am to 10am, on Introduction January 9th and 14th)
 
 ### Course Information
 The course is a blend of online learning experiences (about 2 hours of preparation will be required per day), in-class lectures, hands-on laboratory exercises with a variety of data sets, and a capstone project. The course will use the Python programming language. Participants are required to bring their own computer to the daily sessions. Lunch and refreshments are **NOT** provided.
