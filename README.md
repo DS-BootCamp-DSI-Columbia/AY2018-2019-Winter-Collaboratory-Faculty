@@ -52,5 +52,5 @@ The boot camp's mission is to enable Columbia faculty members, postdoctoral rese
 
 
 ### About [Collaboratory@Columbia](http://collaboratory.columbia.edu/)
-Jointly founded by Columbia University’s [Data Science Institute](http://datascience.columbia.edu/) and [Columbia Entrepreneurship](http://entrepreneurship.columbia.edu/), The [Collaboratory@Columbia](http://collaboratory.columbia.edu/) is a university-wide program dedicated to supporting collaborative curricula innovations designed to ensure that all Columbia University students receive the education and training that they need to succeed in today’s data rich world.
+Jointly founded by Columbia University’s [Data Science Institute](http://datascience.columbia.edu/) and [Columbia Entrepreneurship](http://entrepreneurship.columbia.edu/), The [Collaboratory Program](http://collaboratory.columbia.edu/) is a university-wide program dedicated to supporting collaborative curricula innovations designed to ensure that all Columbia University students receive the education and training that they need to succeed in today’s data rich world.
 
