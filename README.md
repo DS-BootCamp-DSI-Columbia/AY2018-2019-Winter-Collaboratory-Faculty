@@ -26,10 +26,10 @@ The boot camp's mission is to enable Columbia faculty members, postdoctoral rese
 
 - **What**: This year, to encourage participation from Columbia faculty, we have adopted a modular structure for the boot camp with four stand-alone modules:
 
-	- [Day 1] [Explortaory Data Analysis and Visualization with ggplot2.](/Bootcamp-materials/Day1-EDAV-ggplot2/)
-	- [Day 2] [Statistical Methods for Casual Reasoning.](/Bootcamp-materials/Day2-Causal-Inference/)
-	- [Day 3] [Introduction to Machine Learning with Python/sklearn.](/Bootcamp-materials/Day3-Machine-Learning/)
-	- [Day 4-5] [Capstone project - a research intensive camp with data science students.](/Bootcamp-materials/Day4&5-Project/)
+	- [Day 1] [Explortaory Data Analysis and Visualization with ggplot2.](/Bootcamp-materials/Day1-EDAV-ggplot2/) with Joyce Robbins
+	- [Day 2] [Statistical Methods for Casual Reasoning.](/Bootcamp-materials/Day2-Causal-Inference/) with Vincent Dorie
+	- [Day 3] [Introduction to Machine Learning with Python/sklearn.](/Bootcamp-materials/Day3-Machine-Learning/) with Andreas Mueller
+	- [Day 4-5] [Capstone project - a research intensive camp with data science students.](/Bootcamp-materials/Day4&5-Project/) with Tian Zheng
 
 	- **Daily schedule**: 10am** to 4pm (**9am to 10am, Boot camp introduction on Wednesday, January 9th and Monday, January 14th)
 
