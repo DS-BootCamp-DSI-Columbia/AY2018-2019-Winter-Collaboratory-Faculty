@@ -6,7 +6,8 @@
 ### Day 1 Exploratory Data Analysis and Visualization with ggplot2
 
 - When: Wednesday, January 9th, 2019
-- Where: TBA
+- Where: Room 425, [Riverside Church](../../Misc-files/directions.pdf)
+
 - **Topics**:
 - **Mandatory pre-assignment**:
 - 9:00am-10:00am: Welcome and Registration. 

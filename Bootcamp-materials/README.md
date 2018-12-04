@@ -5,13 +5,13 @@
 ## Winter 2018-2019 Data Science Bootcamp
 
 - When: January 9th – 15th, 2019
-- Where: Design Studio*, Room 430 of the [Riverside Church (490 Riverside Dr, New York, NY 10027)](https://www.google.com/maps/dir//40.8112215,-73.963428/@40.8113575,-73.9638732,19z/data=!4m2!4m1!3e3)
+- Where: Design Studio*, Room 430 of the [Riverside Church (490 Riverside Dr, New York, NY 10027)](../Misc-files/directions.pdf)
 	 
-	 *Unless otherwise noted.
+	 *on Jan 9th, we will be meeting in room 425. 
 	 
 - Daily schedule: 10am** to 4pm 
 
-	**(9am to 10am, on Introduction January 9th and 14th)
+	**9am to 10am, on Introduction January 9th and 14th
 
 ### Boot Camp Information
 The boot camp is organized into three stand-alone modules and a research hackathon. Each module is a blend of online learning experiences (about 2 hours of preparation will be required per day), in-class lectures, hands-on laboratory exercises with a variety of data sets. 

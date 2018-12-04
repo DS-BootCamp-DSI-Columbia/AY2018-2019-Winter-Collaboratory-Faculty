@@ -20,7 +20,7 @@ The boot camp's mission is to enable Columbia faculty members, postdoctoral rese
 	- [January 9th – 11th, 2019] Data Science Skill Camp
 	- [January 14th – 15th, 2019] Capstone project, a Data Science Research Intensive Camp
 
-- **Where**: see [bootcamp description](/Bootcamp-materials/README.md)
+- **Where**: Room 425 (Jan 9th) or Room 430, [Riverside Church](Misc-files/directions.pdf). See [bootcamp description](/Bootcamp-materials/README.md) for details.
 
 [comment]: # (Columbia Entrepreneurship Design Studio, Room 430 of the Riverside # Church (490 Riverside Dr, New York, NY 10027) )
 
