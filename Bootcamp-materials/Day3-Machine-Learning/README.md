@@ -37,6 +37,57 @@
 + Basic understanding of data structures and algorithms
 + Basic skills for working with data files (i/o operations on csv and tsv files, etc.)
 
+### Installation Notes
+
+This tutorial will require recent installations of
+
+- [NumPy](http://www.numpy.org)
+- [SciPy](http://www.scipy.org)
+- [matplotlib](http://matplotlib.org)
+- [pillow](https://python-pillow.org)
+- [pandas](http://pandas.pydata.org)
+- [scikit-learn](http://scikit-learn.org/stable/) (>=0.18.1)
+- [IPython](http://ipython.readthedocs.org/en/stable/)
+- [Jupyter Notebook](http://jupyter.org)
+- imbalance-learn
+
+You should be able to type:
+
+    jupyter notebook
+
+in your terminal window and see the notebook panel load in your web browser.
+Try opening and running a notebook from the material to see check that it works.
+
+For users who do not yet have these  packages installed, a relatively
+painless way to install all the requirements is to use a Python distribution
+such as [Anaconda](https://www.continuum.io/downloads), which includes
+the most relevant Python packages for science, math, engineering, and
+data analysis; Anaconda can be downloaded and installed for free
+including commercial use and redistribution.
+The code examples in this tutorial should be compatible to Python 2.7, Python
+3.4 and later. However, it's recommended to use a recent Python version (like
+3.5 or 3.6).
+
+After obtaining the material, we **strongly recommend** you to open and execute
+a Jupyter Notebook `jupter notebook check_env.ipynb` that is located at the
+top level of this repository. Inside the repository, you can open the notebook
+by executing
+
+```bash
+jupyter notebook check_env.ipynb
+```
+
+inside this repository. Inside the Notebook, you can run the code cell by
+clicking on the "Run Cells" button as illustrated in the figure below:
+
+![](images/check_env-1.png)
+
+
+Finally, if your environment satisfies the requirements for the tutorials, the executed code cell will produce an output message as shown below:
+
+![](images/check_env-2.png)
+
+
 ### Getting started
 
 #### Introductional Material
