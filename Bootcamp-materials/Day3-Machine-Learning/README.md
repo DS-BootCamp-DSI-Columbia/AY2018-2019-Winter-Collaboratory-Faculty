@@ -10,15 +10,24 @@
 
 - **Topics**:
 - **Mandatory pre-assignment**:
-- 9:00am-10:00am: Welcome and Registration. 
-- 10:00am Lecture: xxx
-- 11:00am Lab session: 
-- 12:00pm Lunch Break
-- 1:00pm Lecture: xxx
-- 1:30pm Lab session: 
-- 2:30pm Break
-- 3:00pm Lab session: xxx
-- [Further reading]
+- **Start**: 9:00am
+
+### Content
+
+- [Introduction to ML](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/00-introduction.html)
+- [Supervised Learning](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/01-supervised-learning.html)
+- [Unsupervised Learning](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/02-unsupervised-learning.html)
+- [Cross-validation and Grid-Search](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/03-cross-validation-grid-search.html)
+- [Preprocessing](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/04-preprocessing.html)
+- [Linear Models for Regression](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/05-linear-models-regression.html)
+- [Linear Models for Classification](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/06-linear-models-classification.html)
+- [Trees and Forests](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/07-trees-forests.html)
+- [Gradient Boosted Trees](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/08-gradient-boosting.html)
+- [Pipelines](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/02-pipelines.html)
+- [Model Evaluation](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/03-model-evaluation.html)
+- [Imbalanced Data](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/04-imbalanced-data.html)
+- [Text Data](https://ds-bootcamp-dsi-columbia.github.io/AY2018-2019-Winter-Collaboratory-Faculty/Bootcamp-materials/Day3-Machine-Learning/slides/05-working-with-text-data.html)
+
 
 ### Prerequisites
  
