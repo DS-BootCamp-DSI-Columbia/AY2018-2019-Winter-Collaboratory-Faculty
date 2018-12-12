@@ -8,7 +8,7 @@
 - When: Friday January 11th, 2019
 - Where: Design Studio, Room 430 of the [Riverside Church (490 Riverside Dr, New York, NY 10027)](https://www.google.com/maps/dir//40.8112215,-73.963428/@40.8113575,-73.9638732,19z/data=!4m2!4m1!3e3)
 
-- **Mandatory pre-assignment**:
+- **Mandatory pre-assignment**: Read the ram_price data from the notebooks/data subfolder using pandas and visualize it using matplotlib in a jupyter notebook.
 - **Start**: 9:00am
 
 ### Content
