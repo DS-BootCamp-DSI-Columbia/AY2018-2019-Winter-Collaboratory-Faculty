@@ -8,6 +8,24 @@
 - When: Thursday, January 10th, 2019
 - Where: Design Studio, Room 430 of the [Riverside Church (490 Riverside Dr, New York, NY 10027)](https://www.google.com/maps/dir//40.8112215,-73.963428/@40.8113575,-73.9638732,19z/data=!4m2!4m1!3e3)
 - **Topics**:
+
+1. Introduction to Causal Inference
+    - Confounding and Causal DAGs
+    - Potential Outcomes
+    - Foundational Assumptions
+    - Causal Estimands
+2. Methods for Causal Inference
+    - Propensity Scores
+    - Matching, Weighting, and Stratification
+    - Regression
+    - Structural Equation Modeling
+3. Miscellany
+    - Sensitivity Analyses
+    - Instrumental Variables and ITT
+    - Regression Discontinuity
+    - Variable Selection
+    - Individual Effects
+
 - **Mandatory pre-assignment**:
 - 10:00am Lecture: xxx
 - 11:00am Lab session: 
@@ -31,5 +49,7 @@
 #### Introductional Material
 
 To get started here are some online resources for programming skills in R and for setting up the required R development environment.
+
++ [DataCamp's free R Tutorial](https://www.datacamp.com/courses/free-introduction-to-r)
 
 [more]
