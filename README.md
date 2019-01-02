@@ -8,9 +8,13 @@
 
 ### The Columbia [Data Science Institute](http://datascience.columbia.edu/) and [Columbia Enterpreneuship](http://entrepreneurship.columbia.edu/) are organizing the Third Winter-Intensive Collaboratory Data Science Boot Camp
 
-The [Collaboratory@Columbia](http://collaboratory.columbia.edu/) is pleased to announce our 3rd annual free **Winter-Break Data Science Boot Camp**.  Designed by faculty and postdoctoral scholars from Columbia University’s [Data Science Institute](http://datascience.columbia.edu/), the curriculum includes on-line learning material, introductory lectures, hands-on laboratory experiences and a capstone project. 
+The [Collaboratory@Columbia](http://collaboratory.columbia.edu/) is pleased to announce our 3rd annual free **Winter-Break Data Science Boot Camp**.  Designed by faculty and postdoctoral scholars from Columbia University’s [Data Science Institute](http://datascience.columbia.edu/), the curriculum includes on-line learning material, introductory lectures and hands-on laboratory experiences. 
 
-The boot camp's mission is to enable Columbia faculty members, postdoctoral researchers and senior Ph.D. students to adopt more state-of-the-art data-science tools in their research and educational activities. To achieve this goal, we have designed a 3+2 model that is different from the previous week-long format. The first three days (January 9th-11th) will be a *data science skill camp* that consists of three one-day long courses taught by DSI core curriculum's instructors on *exploratory data analysis and visualization*, *statistical modeling for causal inference* and *machine learning*. On January 14th and 15th, we will have a two-day "research hackathon," a data science research intensive camp, where faculty will work with teams of data science students on a short research project from their field. During this two-day *data science research camp*, faculty participants will explore a potential data-driven research idea, gain first-hand experience on working with data science students, and map out the required data-science workflow for the proposed idea, while supported by the boot camp instructors. Participants, working with their student team members, will also be encouraged to create data science teaching modules based on their project. 
+The boot camp's mission is to enable Columbia faculty members, postdoctoral researchers and senior Ph.D. students to adopt more state-of-the-art data-science tools in their research and educational activities. To achieve this goal, we have designed a new modular model that is different from the previous week-long format. On January 9th-11th, we will have a *data science skill camp* that consists of three one-day long modules taught by DSI core curriculum's instructors on *exploratory data analysis and visualization*, *statistical modeling for causal inference* and *machine learning*. 
+
+[***Postponed/Cancelled***] We decided to postpone this portion of the boot camp due to the scheduling challenges. We will organize a similar event in the future.  
+
+~~On January 14th and 15th, we will have a two-day "research hackathon," a data science research intensive camp, where faculty will work with teams of data science students on a short research project from their field. During this two-day *data science research camp*, faculty participants will explore a potential data-driven research idea, gain first-hand experience on working with data science students, and map out the required data-science workflow for the proposed idea, while supported by the boot camp instructors. Participants, working with their student team members, will also be encouraged to create data science teaching modules based on their project. ~~ 
 
 [**Apply for the boot camp**](https://goo.gl/forms/1UiJgkoN2FFSMYBu1) (Deadline 11:59pm 12/17/2018)
 
@@ -18,20 +22,18 @@ The boot camp's mission is to enable Columbia faculty members, postdoctoral rese
 
 - **When**: 
 	- [January 9th – 11th, 2019] Data Science Skill Camp
-	- [January 14th – 15th, 2019] Capstone project, a Data Science Research Intensive Camp
-
+	
 - **Where**: Room 425 (Jan 9th) or Room 430, [Riverside Church](Misc-files/directions.pdf). See [bootcamp description](/Bootcamp-materials/README.md) for details.
 
 [comment]: # (Columbia Entrepreneurship Design Studio, Room 430 of the Riverside # Church (490 Riverside Dr, New York, NY 10027) )
 
 - **What**: This year, to encourage participation from Columbia faculty, we have adopted a modular structure for the boot camp with four stand-alone modules:
 
-	- [Day 1] [Explortaory Data Analysis and Visualization with ggplot2.](/Bootcamp-materials/Day1-EDAV-ggplot2/) with Joyce Robbins
-	- [Day 2] [Statistical Methods for Casual Reasoning.](/Bootcamp-materials/Day2-Causal-Inference/) with Vincent Dorie
-	- [Day 3] [Introduction to Machine Learning with Python/sklearn.](/Bootcamp-materials/Day3-Machine-Learning/) with Andreas Mueller
-	- [Day 4-5] [Capstone project - a research intensive camp with data science students.](/Bootcamp-materials/Day4&5-Project/) with Tian Zheng
+	- [Day 1] [Explortaory Data Analysis and Visualization with ggplot2.](/Bootcamp-materials/Day1-EDAV-ggplot2/) with Joyce Robbins (Room 425)
+	- [Day 2] [Statistical Methods for Casual Reasoning.](/Bootcamp-materials/Day2-Causal-Inference/) with Vincent Dorie (Room 430)
+	- [Day 3] [Introduction to Machine Learning with Python/sklearn.](/Bootcamp-materials/Day3-Machine-Learning/) with Andreas Mueller (Room 430)
 
-	- **Daily schedule**: 10am** to 4pm (**9am to 10am, Boot camp introduction on Wednesday, January 9th and Monday, January 14th)
+	- **Daily schedule**: 10am** to 4pm (**9am to 10am, Boot camp introduction on Wednesday, January 9th)
 
 - **Who** should apply: Columbia full-time **faculty**, postdoctoral researchers and senior Ph.D. students who have working knowledge of programming and data analytics, and are ready to sharpen their skills to include a training in data science research skills, and/or to create a data science teaching module in a course they teach, and/or to initiate a project in data science. **Seats are limited** (30 for each module), and we will give **priority** to faculty who have applied to or are considering applying to the [Collaboratory fellows fund](http://entrepreneurship.columbia.edu/collaboratory/collaboratory-fellows-fund/).
 
@@ -42,18 +44,16 @@ The boot camp's mission is to enable Columbia faculty members, postdoctoral rese
 ![deadline](Misc-files/deadline.png)
 
 ----
-### About the instructors
+### About the instructors and organizers
+![joyce](Misc-files/joyce.png) ![vince](Misc-files/vince.png) ![andy](Misc-files/andy.jpeg) ![tian](Misc-files/tian.jpeg)
 
-![andy](Misc-files/andy.jpeg) ![tian](Misc-files/tian.jpeg) 
-![joyce](Misc-files/joyce.png)
+**[Joyce Robbins](https://github.com/jtr13)** [@jtrnyc](https://twitter.com/jtrnyc) is Lecturer-in-Discipline, Department of Statistics, Columbia University, and affiliated with the Data Science Institute at Columbia. She is co-author, with Naomi Robbins of "Creating Effective Graphics with Microsoft R Open." Joyce teaches *Exploratory Data Analysis and Visualization*, a required/core course in the Data Science Institute's Master of Science curriculum. She is Publications Officer of the Statistical Graphics section of the American Statistical Association, on the teaching team of [R Forwards](https://forwards.github.io/), and frequent speaker at RLadies NYC meetups. In all capacities, she strives to help people interpret the meaning of data, particularly using visual methods.
+
+**[Vince Dorie](https://github.com/vdorie)** is an Associate Research Scientist at the Data Science Institute at Columbia University. He develops Bayesian nonparametric methods for causal inference and is the author of several statistical modeling software packages for R. He designed and hosted the first large-scale, causal inference competition at the 2016 Atlantic Causal Inference Conference and is dedicated to advancing the state of the art in causal inference by making robust inference easier to conduct and assumptions easier to test. In between academic jobs, he spent a year working for the California Department of Justice and Kamala Harris' Open Justice initiative, improving access to criminal justice data and fueling criminal justice reform.
 
 **[Andreas Mueller](http://amueller.github.io/)** ([@amueller](https://github.com/amueller)) is a lecturer at the [Data Science Institute](http://datascience.columbia.edu/)at Columbia University and author of the O’Reilly book “[Introduction to Machine Learning with Python](http://amueller.github.io/#book)”, describing a practical approach to machine learning with python and scikit-learn. He is one of the core developers of the scikit-learn machine learning library, and he has been co-maintaining it for several years. He is also a [Software Carpentry](http://software-carpentry.org/) instructor. In the past, he worked at the NYU Center for Data Science on open source and open science, and as Machine Learning Scientist at Amazon. You can find his full  cv [here](http://amueller.github.io/cv_andreas_mueller.pdf). His mission is to create open tools to lower the barrier of entry for machine learning applications, promote reproducible science and democratize the access to high-quality machine learning algorithms.
 
 **[Tian Zheng](http://www.stat.columbia.edu/~tzheng/)** ([@tz33cu](https://github.com/tz33cu)) is Professor of Statistics, Associate Director for Education of Data Science Institute at Columbia University. She develops novel methods for exploring and understanding patterns in complex data from different application domains such as biology, psychology, climatology, and etc. Her current projects are in the fields of statistical machine learning, spatiotemporal modeling and social network analysis. Professor Zheng’s research has been recognized by the 2008 Outstanding Statistical Application Award from the American Statistical Association (ASA), the Mitchell Prize from ISBA and a Google research award. She became a Fellow of American Statistical Association in 2014. Professor Zheng is the receipt of 2017 Columbia’s Presidential Award for Outstanding Teaching. In 2018, she will be the chair-elect for ASA’s section on Statistical Learning and Data Science. She is on the advisory board for STATS at Sense About Science America that targets to develop a statistical literate citizenry.
-
-**[Vince Dorie](https://github.com/vdorie)** is an Associate Research Scientist at the Data Science Institute at Columbia University. He develops Bayesian nonparametric methods for causal inference and is the author of several statistical modeling software packages for R. He designed and hosted the first large-scale, causal inference competition at the 2016 Atlantic Causal Inference Conference and is dedicated to advancing the state of the art in causal inference by making robust inference easier to conduct and assumptions easier to test. In between academic jobs, he spent a year working for the California Department of Justice and Kamala Harris' Open Justice initiative, improving access to criminal justice data and fueling criminal justice reform.
-
-**[Joyce Robbins](https://github.com/jtr13)** [@jtrnyc](https://twitter.com/jtrnyc) is Lecturer-in-Discipline, Department of Statistics, Columbia University, and affiliated with the Data Science Institute at Columbia. She is co-author, with Naomi Robbins of "Creating Effective Graphics with Microsoft R Open." Joyce teaches *Exploratory Data Analysis and Visualization*, a required/core course in the Data Science Institute's Master of Science curriculum. She is Publications Officer of the Statistical Graphics section of the American Statistical Association, on the teaching team of [R Forwards](https://forwards.github.io/), and frequent speaker at RLadies NYC meetups. In all capacities, she strives to help people interpret the meaning of data, particularly using visual methods.
 
 
 ### About [Collaboratory@Columbia](http://collaboratory.columbia.edu/)
