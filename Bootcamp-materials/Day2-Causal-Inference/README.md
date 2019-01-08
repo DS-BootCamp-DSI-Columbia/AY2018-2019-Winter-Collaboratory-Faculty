@@ -31,8 +31,8 @@
     - Individual Effects
 
 - **Mandatory pre-assignment**:
-- 10:00am Lecture: [bootcamp_01.pdf]
-- 11:00am Lab session: [lab_01.md]
+- 10:00am Lecture: [Overview](bootcamp_01.pdf)
+- 11:00am Lab session: [CI EDAV](lab_01.md)
 - 12:00pm Lunch Break
 - 1:00pm Lecture: xxx
 - 1:30pm Lab session: 

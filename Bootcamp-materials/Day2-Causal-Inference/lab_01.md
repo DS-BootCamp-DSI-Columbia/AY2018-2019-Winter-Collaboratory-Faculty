@@ -8,7 +8,7 @@
 
 The 2018 Atlantic Causal Inference [Data Challenge](https://www.synapse.org/#!Synapse:syn11294478/wiki/486304) was a competition to evaluate different automated methods for causal inference in a simulated environment. One issue that arose over the course of the challenge was that not every data set met the foundational assumptions for causal inference: SUTVA, ignorability, and overlap. In this lab, you'll explore the 2018 sample files through visualizations. By the end you should be able to understand the fundamental problem of causal inference as it relates to data, identify obvious violations of foundational assumptions from the potential outcomes, and identify various sorts of causal variables.
 
-The files for this lab can be found at [https://stat.columbia.edu/~vincent/bootcamp]. Each file contains a practice simulation from the contest and columns:
+The files for this lab can be found [here](https://stat.columbia.edu/~vincent/bootcamp). Each file contains a practice simulation from the contest and columns:
 
 1. `z` - treatment variable, 0 is control and 1 is treated
 2. `y` - the observed response variable
@@ -44,4 +44,4 @@ Try to classify the variables as confounders, instruments, predictors, or unrela
 
 1. For any variable of interest, produce a plot of the observed outcomes against it
 
-For a "solution", see [lab_thoughts.md]
+For a "solution", see [here](lab_thoughts.md)
