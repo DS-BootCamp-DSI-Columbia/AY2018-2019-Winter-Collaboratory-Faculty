@@ -48,13 +48,17 @@ If you're new to ggplot2, please read ["Data Visualization"](https://r4ds.had.co
 
 2:30pm - 3:00pm Break
 
-Optional lectures or lab time:
+Optional lectures or lab time:  
+
 3:00pm - 3:15pm RMarkdown
+
 3:15pm - 3:30pm dplyr 
+
 3:30pm - 3:45pm git/GitHub
 
 3:45pm - 4:00pm 
-* Concluding remarks, Q & a
+
+* Concluding remarks, Q & A
 
 ### Prerequisites
  
