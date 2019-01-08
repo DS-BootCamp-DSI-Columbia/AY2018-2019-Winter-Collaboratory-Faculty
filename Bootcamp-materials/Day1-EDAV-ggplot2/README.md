@@ -10,6 +10,21 @@
 
 - **Topics**:
 - **Mandatory pre-assignment**:
+
+1. Download R from https://cran.r-project.org/
+
+2. Download RStudio Desktop (open source / free version) from https://www.rstudio.com/products/rstudio/download/#download
+
+3. Install tidyverse packages with:
+
+ `> install.packages("tidyverse")`
+ 
+If you haven't used R at all previously, I recommend [DataCamp's free Introduction to R course](https://www.datacamp.com/courses/free-introduction-to-r). For our purposes, you can skip the matrices and lists chapters, and the ordered factors section of the factors chapter. 
+
+If you're new to ggplot2, please read ["Data Visualization"](https://r4ds.had.co.nz/data-visualisation.html) in *R for Data Science* by Garrett Grolemund and Hadley Wickham to gain a general familiarity with ggplot2 functions.
+ 
+ 
+
 - 9:00am-10:00am: Welcome and Registration. 
 - 10:00am Lecture: xxx
 - 11:00am Lab session: 
