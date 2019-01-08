@@ -1,0 +1,310 @@
+---
+title: "Barcharts"
+author: 
+date: January 9, 2019
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      warning = FALSE,
+                      message = FALSE)
+```
+
+Help:
+
+https://github.com/jtr13/codehelp/blob/master/R/reorder.md
+
+### 1. Flowers
+
+Data:  `flower` dataset in  **cluster** package
+
+a) Rename the column names and recode the levels of categorical variables to descriptive names. For example, "V1" should be renamed "winters" and the levels to "no" or "yes". Display the full dataset.
+
+```{r}
+library(cluster)
+library(tidyverse)
+f <- flower %>% 
+  transmute(winter = fct_recode(V1, no = "0", yes = "1"),
+  shadow = fct_recode(V2, no = "0", yes = "1"),
+  tubers = fct_recode(V3, no = "0", yes = "1"),
+  color = fct_recode(V4, white = "1", yellow = "2", pink = "3", red = "4", blue = "5"),
+  soil = fct_recode(V5, dry = "1", normal = "2", wet = "3"),
+  ranking = V6,
+  height = V7,
+  distance = V8)
+f
+```
+
+b) Create frequency bar charts for the `color` and `soil` variables, using best practices for the order of the bars.
+
+```{r}
+ggplot(f, aes(fct_infreq(color))) + geom_bar() + theme_grey(14)
+```
+
+```{r}
+ggplot(f, aes(soil)) + 
+  geom_bar() +
+  scale_y_continuous(breaks = seq(0,10,2)) + theme_grey(14)
+```
+
+### 2. Minneapolis
+
+Data: `MplsDemo` in **carData** package
+
+a. Create a Cleveland dot plot showing estimated median household income by neighborhood.
+
+```{r}
+library(carData)
+theme_dotplot <- theme_bw(14) +
+    theme(axis.text.y = element_text(size = rel(.75)),
+          axis.ticks.y = element_blank(),
+          axis.title.x = element_text(size = rel(.75)),
+          panel.grid.major.x = element_blank(),
+          panel.grid.major.y = element_line(size = 0.5),
+          panel.grid.minor.x = element_blank())
+```
+
+```{r, fig.height = 10, fig.width = 7}
+mtidy <-  MplsDemo %>%
+  select(neighborhood, collegeGrad, foreignBorn, poverty) %>% 
+  gather(key = variable, value = percent, -neighborhood) %>% 
+  mutate(variable = factor(variable, levels = c("poverty", "foreignBorn", "collegeGrad")))
+
+ggplot(MplsDemo, aes(hhIncome, fct_reorder(neighborhood, hhIncome))) +
+  geom_point() + ylab("") +
+  theme_dotplot + theme(legend.position = "top")
+```
+
+
+b. Use a Cleveland dot plot to show percentage of foreign born, earning less than twice the poverty level, and with a college degree in different colors.  Data should be sorted by college degree.
+
+```{r, fig.height = 10, fig.width = 7}
+mtidy <-  MplsDemo %>%
+  select(neighborhood, collegeGrad, foreignBorn, poverty) %>% 
+  gather(key = variable, value = percent, -neighborhood) %>% 
+  # factor levels are changed so order of levels in the legend is the same as in the graph
+  mutate(variable = factor(variable, levels = c("poverty", "foreignBorn", "collegeGrad")))
+
+ggplot(mtidy, aes(percent, fct_reorder2(neighborhood, variable, -percent),
+                  color = variable)) +
+  geom_point() + ylab("") +
+  theme_dotplot + theme(legend.position = "top",
+                        legend.title = element_blank())
+```
+
+c. What patterns do you observe? What neighborhoods do not appear to follow these patterns?
+
+**`collegeGrad` has the widest spread. It appears to be negatively correlated with `foreignBorn`. `poverty` is (surprisingly?) steady more or less across neighborhoods, and not correlated with `collegeGrad`. `Seward` has a rate of `foreignBorn` given its percentage of `collegeGrad`. (Other outliers can be observed as well.)**
+
+
+### 3. Taxis
+
+Data: NYC yellow cab rides in June 2018, available here: http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml
+
+It's a large file so work with a random subset of the data.  
+
+Draw four scatterplots of `tip_amount` vs. `far_amount` with the following variations:
+
+(a) Points with alpha blending
+
+```{r}
+# Read in the large dataset once only, subset, and write to file to save time:
+# 
+# df <- read_csv("~/Downloads/yellow_tripdata_2018-06.csv")
+# set.seed(5702)
+# taxis <- df[sample(100000),]
+# write_csv(taxis, "taxidata.csv")
+```
+
+```{r taxi_a}
+df <- read_csv("taxidata.csv")
+ggplot(df, aes(fare_amount, tip_amount)) +
+  geom_point(alpha = .5, stroke = 0) +
+  theme_classic(14)
+```
+
+(b) Points with alpha blending + density estimate contour lines
+
+**For a better view, we will remove the negative fare values as well as some of the outliers. In addition, we'll reduce the number of points to reduce overplotting:**
+
+```{r taxi_b}
+set.seed(5702)
+index <- sample(nrow(df), 10000)
+df2 <- df[index,] 
+ggplot(df2, aes(fare_amount, tip_amount)) +
+  geom_point(alpha = .5, stroke = 0, color = "grey70") + geom_density_2d() +
+  scale_x_continuous(limits = c(0, 50)) +
+  scale_y_continuous(limits = c(0, 8)) +
+  theme_classic(14)
+```
+
+(c) Hexagonal heatmap of bin counts
+
+```{r taxi_c}
+ggplot(df2, aes(fare_amount, tip_amount)) +
+  geom_hex() +
+  scale_x_continuous(limits = c(0, 50)) +
+  scale_y_continuous(limits = c(0, 8)) +
+  scale_fill_viridis_c() +
+  theme_classic(14)
+```
+
+(d) Square heatmap of bin counts 
+
+```{r taxi_d}
+ggplot(df, aes(fare_amount, tip_amount)) +
+  geom_bin2d(bins = 50) +
+  scale_fill_distiller(palette = "Blues",
+                       direction = 1) +
+  scale_x_continuous(limits = c(0, 50)) +
+  scale_y_continuous(limits = c(0, 8)) +
+  theme_classic(14)
+```
+
+For all, adjust parameters to the levels that provide the best views of the data.
+
+(e) Describe noteworthy features of the data, using the movie ratings example on page 82 (last page of Section 5.3) as a guide.  
+
+**For this particular dataset, a scatterplot of a random sample of the data has many advantages over the other forms. In many cases, contour lines or binning help identify clusters. But in this unusual case, the most interesting feature is the collection of straight lines that cross through the data at different angles. When we bin the data, or draw contour lines, this feature becomes much less prominent.**
+
+**Let's look again at the scatterplot:**
+
+```{r taxi_e}
+g <- ggplot(df2, aes(fare_amount, tip_amount)) +
+  geom_point(alpha = .3, stroke = 0, color = "blue") +
+  scale_x_continuous(limits = c(0, 50)) +
+  scale_y_continuous(limits = c(0, 8)) +
+  theme_bw(14)
+g
+```
+
+**We note the following:**
+
+**1. There are large number of people who don't tip at all, even for high fare amounts.**
+
+**2. Prominent horizontal lines indicate that quite a few people tip even dollar amounts up to \$5. There is a mild association with fare amount -- for example, more \$5 tips than \$2 tips for high fares. However there is quite a wide range of fare amounts for which people give fixed even dollar tip amounts.**
+
+**3. The straight diagonal lines are particularly interesting. They indicate a linear relation between fare and tip amounts, which is very likely due to the option when paying with a credit card to tip a percentage of the total. Tip choices are generally multiples of 5\%.** 
+
+**4. With the exception of the \$0 tips, and some \$1 and \$2 tips, the vast majority of tips are within these lines, forming a cone shape of tips.**
+
+**5. Although the straight lines are fairly close to the patterns in the plotted points, there are some deviations.  First we note that most of the points are above the lines, suggesting that the tips are slightly higher than the indicated tip percenages.**
+
+**6. We also notice that there's an unusual fork in one of the lines around (\$23, \$6). Moving up and the right from this point, there are two straight lines, one with a smaller slope than the other.**
+
+**7. The data appear to be rounded, more so for the fare amount than the tip amount.  (For example, on the horiztonal line where the tip is zero, the fare amounts do not overlap, but on the vertical line where the fare is \$5, the points do overlap significantly.)**
+
+**8. There are a few outliers, high tips for low fares, and low tips for high fares.**
+
+### 4. Olive Oil
+
+Data: `olives` dataset in **extracat** package
+
+a. Draw a scatterplot matrix of the eight continuous variables. Which pairs of variables are strongly positively associated and which are strongly negatively associated?
+
+```{r}
+library(extracat)
+plot(olives)
+```
+
+**There is a strong positive correlation between:
+
+* `palmitic` and `palmitoleic`
+
+
+There are strong negative correlations between:
+
+* `palmitic` and `oleic`  
+
+* `palmitoleic` and `oleic`  
+
+* `oliec` and `linoleic`
+
+
+b. Color the points by region.  What do you observe?
+
+#### base R example
+
+```{r, fig.height = 10, fig.width = 10}
+plot(olives, col = olives$Region)
+```
+
+```{r, fig.height = 2}
+# Legends are difficult with scatterplot matrices -- this doesn't look good but it gets
+# the job done for EDA
+# Create a new plot with a legend only:
+oldpar <- par(mar=c(0,0,0,0)) # store the old par values
+plot.new()
+legend("left", pch = 21, cex = .8, 
+       legend = levels(olives$Region),
+       col = as.numeric(as.factor(levels(olives$Region))))
+par(oldpar) # reinstate the old par values
+```
+
+#### GGally example
+
+```{r, fig.height = 10, fig.width = 10}
+# get numeric columns only
+col <- which(map_chr(olives, is.numeric) == TRUE)
+library(GGally)
+ggpairs(olives, aes(color = Region), columns = col,
+        lower = list(continuous = wrap("points", alpha = .5,
+                                       size = 1)), legend = 1) +
+  theme_classic()
+```
+
+**There are clear regional patterns which are unique to each pair of varibles.  A general trend is that a greater spread exists in values of almost all variables for olives from the South.**
+
+
+### 5. Wine
+
+Data: `wine` in **pgmm** package
+
+(Recode the `Type` variable to descriptive names.)
+
+```{r}
+library(pgmm)
+data("wine")
+wine <- wine %>% 
+  mutate(Type = fct_recode(factor(Type), Barolo = "1",
+                           Grignolino = "2", Barbera = "3"))
+```
+
+
+Use parallel coordinate plots to explore how the variables separate the wines by `Type`. Present the version that you find to be most informative. You do not need to include all of the variables.
+
+```{r}
+# remove Chloride outliers
+# 
+library(GGally)
+wine <- wine %>% filter(Chloride < 200)
+
+ggparcoord(wine, columns = 2:28, groupColumn = 1, alpha = .2) +
+  coord_flip()
+```
+
+
+
+**It's hard to see much with so many variables, so we will choose a few variables that appear to have different distributions by region based on boxplots. Note that this is a legitimate use of `scales = "free_y"` since each panel represents a separate variable with its own scale.**
+
+```{r, fig.width = 10, fig.height = 7}
+tidywine <- wine %>% gather(key = variable, value = value, -Type)
+
+ggplot(tidywine, aes(x = Type, y = value, color = Type)) +
+  geom_boxplot() + facet_wrap(~variable, scales = "free_y")
+```
+
+**`Alcohol`, `Color Intensity`,  `Flavanoids`, and `Total Phenols` appear to have different regional trends, so let's try a PCP with just those variables:**
+
+```{r}
+col <- which(colnames(wine) %in% 
+               c("Alcohol", "Color Intensity",  "Flavanoids", "Total Phenols"))
+col
+
+ggparcoord(wine, columns = c(20, 2, 16, 17), groupColumn = 1, alphaLines = .3, 
+           splineFactor = 5) + theme_bw(12) +
+  theme(panel.grid.major.y = element_blank(), panel.grid.minor.y = element_blank())
+```
+
+**We see that different types of wines have different profiles. For example, `Barbera` wines are high in `Color Intensity`, middle in `Alcohol` and low in `Total Phelols` and `Flavanoids`. We can also observe patterns within each group.  For example the `Grignolino` wines that are low in `Alcohol` appear to be high in `Total Phenols`, where we don't observe this inverse correlation for `Barolo` and `Barbera` wines.  This observation could be checked with a scatterplot.**

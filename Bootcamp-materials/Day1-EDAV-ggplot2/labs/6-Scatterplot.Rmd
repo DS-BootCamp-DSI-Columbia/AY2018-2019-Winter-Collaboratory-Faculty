@@ -1,0 +1,36 @@
+---
+title: "Scatterplots"
+author: 
+date: January 9, 2019
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      warning = FALSE,
+                      message = FALSE)
+```
+
+
+### Taxis
+
+Data: NYC yellow cab rides in June 2018, available here: http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml
+
+It's a large file so work with a random subset of the data.  
+
+Draw four scatterplots of `tip_amount` vs. `far_amount` with the following variations. For all, adjust parameters to the levels that provide the best views of the data.
+
+### 1. Points with alpha blending
+
+
+### 2. Points with alpha blending + density estimate contour lines
+
+
+### 3. Hexagonal heatmap of bin counts
+
+
+### 4. Square heatmap of bin counts 
+
+
+### 5. Describe noteworthy features of the data.
+

@@ -1,0 +1,50 @@
+---
+title: "Boxplots"
+author: 
+date: January 9, 2019
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      warning = FALSE,
+                      message = FALSE)
+```
+
+For help, see `?boxplot`, `?geom_boxplot` and/or
+
+https://edav.info/box.html
+
+
+Datasets:
+
+`swiss` -- built-in base R: 47 rows, 6 variables
+
+```{r}
+str(swiss)
+```
+
+`movies` -- `ggplot2movies` package: 58788 rows, 24 variables
+
+```{r}
+# uncomment and run once:
+# install.packages("ggplot2movies")
+library(ggplot2movies)
+str(movies)
+```
+
+### 1. Single boxplots
+
+Do any of the following:
+
+a) Draw a boxplot of the `Fertility` column in the `swiss` dataset.
+
+b) Draw a horizontal boxplot of the `length` variable of the `movies` dataset.
+
+### 2. Multiple boxplots
+
+a) Draw multiple boxplots of `Fertility` in the `swiss` dataset by `Education` group.
+
+b) Draw multiple boxplots of `length` in the `movies` dataset by `mpaa`.
+
+c) Filter / subset the data in b) to obtain clearer views of the trends.

@@ -1,0 +1,79 @@
+---
+title: "Histograms"
+author: 
+date: January 9, 2019
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      warning = FALSE,
+                      message = FALSE)
+```
+
+For help, see `?geom_histogram` and/or
+
+https://edav.info/histo.html#parameters
+
+### 1. Frequency histograms
+
+Choose one of the following datasets:
+
+`swiss` -- built-in base R: 47 rows, 6 variables
+
+```{r}
+str(swiss)
+```
+
+`movies` -- `ggplot2movies` package: 58788 rows, 24 variables
+
+```{r}
+# uncomment and run once:
+# install.packages("ggplot2movies")
+library(ggplot2movies)
+str(movies)
+```
+
+
+a) For which variables would a histogram be appropriate?
+
+
+b) Draw histograms of individual variables. Experiment with changing the bin width and center.
+
+```{r}
+library(ggplot2)
+
+```
+
+Insert new chunks with *option + command + i* 
+
+
+c) Choose one graph and add a title and clear x and y axis labels (Use `?swiss` or `?movies` for more info about the datasets.)
+
+### 2. Density Histograms
+
+a) Chooose one variable and create a density histogram with `geom_histogram(aes(y = ..density..))`
+
+b) Add a density curve with `+ geom_density()`
+
+c) Challenge: Add a normal distribution curve. (Hint: see `?stat_function`).
+
+### 3. Density Curves
+
+Demo:
+
+```{r}
+swiss2 <- swiss %>% 
+  mutate(edulevel = ifelse(Education < 9, 
+                           "less than eight", 
+                           "nine or more"))
+
+ggplot(swiss2, aes(x = Fertility, 
+                   color = edulevel, 
+                   fill = edulevel)) +
+  geom_density(alpha = .2) + 
+  theme_classic()
+```
+
+Compare density curves for Action vs. non-Action movies. (Hint: convert the `Action` column to a factor)
+
