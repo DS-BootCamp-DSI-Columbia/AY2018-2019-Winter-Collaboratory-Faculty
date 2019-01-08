@@ -11,10 +11,13 @@
 
 1. Introduction to Causal Inference
     - Confounding and Causal DAGs
+    - Experimental Design
     - Potential Outcomes
     - Foundational Assumptions
     - Causal Estimands
+    - Overlap and Alignment
 2. Methods for Causal Inference
+    - Nonparametric Tests
     - Propensity Scores
     - Matching, Weighting, and Stratification
     - Regression
@@ -23,17 +26,18 @@
     - Sensitivity Analyses
     - Instrumental Variables and ITT
     - Regression Discontinuity
+    - Case/Control Studies
     - Variable Selection
     - Individual Effects
 
 - **Mandatory pre-assignment**:
-- 10:00am Lecture: xxx
-- 11:00am Lab session: 
+- 10:00am Lecture: [bootcamp_01.pdf]
+- 11:00am Lab session: [lab_01.md]
 - 12:00pm Lunch Break
 - 1:00pm Lecture: xxx
 - 1:30pm Lab session: 
 - 2:30pm Break
-- 3:00pm Lab session: xxx
+- 3:00pm Lecture: xxx
 - [Further reading]
 
 ### Prerequisites
