@@ -1,5 +1,5 @@
 ---
-title: "Barcharts"
+title: "Barchart Solutions"
 author: 
 date: January 9, 2019
 output: github_document

@@ -22,14 +22,12 @@ link:
 
 <https://github.com/DS-BootCamp-DSI-Columbia/AY2018-2019-Winter-Collaboratory-Faculty/blob/master/Bootcamp-materials/Day1-EDAV-ggplot2/data/countries2012.csv>
 
-### 1\. Single boxplots
+## Single boxplots
 
-Do any of the following:
+### 1\. Countries
 
-1)  Draw a boxplot of the `TFR` (total fertility rate) column in the
-    countries dataset.
-
-<!-- end list -->
+Draw a boxplot of the `TFR` (total fertility rate) column in the
+countries dataset.
 
 ``` r
 library(tidyverse)
@@ -39,10 +37,10 @@ boxplot(df$TFR)
 
 ![](2-Boxplot-Solutions_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
-2)  Draw a horizontal boxplot of the `length` variable of the `movies`
-    dataset.
+### 2\. Movies
 
-<!-- end list -->
+Draw a horizontal boxplot of the `length` variable of the `movies`
+dataset.
 
 ``` r
 library(ggplot2movies)
@@ -63,12 +61,11 @@ boxplot(movies2$length, horizontal = TRUE)
 
 (Not very informative…)
 
-### 2\. Multiple boxplots
+## Multiple boxplots
 
-1)  Draw multiple boxplots of `TFR` in the countries dataset by
-    `CONTINENT`.
+### 3\. Countries
 
-<!-- end list -->
+Draw multiple boxplots of `TFR` in the countries dataset by `CONTINENT`.
 
 ``` r
 ggplot(df, aes(x = CONTINENT,     
@@ -88,10 +85,9 @@ ggplot(df, aes(x = fct_reorder(CONTINENT, -TFR, median),
 
 ![](2-Boxplot-Solutions_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
-2)  Draw multiple boxplots of `length` in the `movies` dataset by
-    `mpaa`.
+### 4\. Movies
 
-<!-- end list -->
+Draw multiple boxplots of `length` in the `movies` dataset by `mpaa`.
 
 ``` r
 ggplot(movies, aes(mpaa, length)) + 
@@ -100,10 +96,10 @@ ggplot(movies, aes(mpaa, length)) +
 
 ![](2-Boxplot-Solutions_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
-3)  Filter / subset the data in b) to obtain clearer views of the
-    trends.
+### 5\. Filter / subset
 
-<!-- end list -->
+Filter / subset the data in the previous question to obtain clearer
+views of the trends.
 
 ``` r
 # remove movies that don't have an MPAA rating

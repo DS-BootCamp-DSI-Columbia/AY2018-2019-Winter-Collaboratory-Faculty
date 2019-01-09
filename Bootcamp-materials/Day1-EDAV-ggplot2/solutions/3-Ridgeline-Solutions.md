@@ -1,30 +1,21 @@
----
-title: "Ridgline plots"
-author: 
-date: January 9, 2019
-output: github_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, 
-                      warning = FALSE,
-                      message = FALSE)
-```
-
+Ridgeline Solutions
+================
+January 9, 2019
 
 Dataset:
 
-`movies` -- `ggplot2movies` package: 58788 rows, 24 variables
+`movies` – `ggplot2movies` package: 58788 rows, 24 variables
 
-### 1. Draw ridgeline plots from the `movies` dataset, such as `length` by `year` (Filter / subset as appropriate).
+Draw ridgeline plots from the `movies` dataset, such as `length` by
+`year` (Filter / subset as appropriate).
 
-```{r}
+``` r
 # uncomment and run once:
 # install.packages("ggplot2movies")
 library(ggplot2movies)
 ```
 
-```{r}
+``` r
 library(tidyverse)
 library("ggridges")
 movies2 <- movies %>% filter(length < 200) %>% 
@@ -39,3 +30,4 @@ ggplot(movies2, aes(x=length, y=factor(year))) +
   theme_ridges() 
 ```
 
+![](3-Ridgeline-Solutions_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->

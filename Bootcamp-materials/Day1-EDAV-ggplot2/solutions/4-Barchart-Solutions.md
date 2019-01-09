@@ -1,4 +1,4 @@
-Barcharts
+Barchart Solutions
 ================
 January 9, 2019
 

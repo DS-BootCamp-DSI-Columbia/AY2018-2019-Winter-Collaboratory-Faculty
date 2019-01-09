@@ -1,4 +1,4 @@
-Scatterplots Solutions
+Scatterplot Solutions
 ================
 January 9, 2019
 
@@ -9,8 +9,7 @@ Data: NYC yellow cab rides in June 2018, available here:
 
 It’s a large file so work with a random subset of the data.
 
-Draw four scatterplots of `tip_amount` vs. `far_amount` with the
-following
+Draw four plots of `tip_amount` vs. `far_amount` with the following
 variations:
 
 ### 1\. Points with alpha blending

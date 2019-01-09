@@ -1,5 +1,5 @@
 ---
-title: "Boxplots"
+title: "Ridgeline"
 author: 
 date: January 9, 2019
 output: html_document
@@ -11,17 +11,9 @@ knitr::opts_chunk$set(echo = TRUE,
                       message = FALSE)
 ```
 
-For help, see `?boxplot`, `?geom_boxplot` and/or
+For help, see https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html
 
-https://edav.info/box.html
-
-
-Datasets:
-
-`swiss` -- built-in base R: 47 rows, 6 variables
-
-```{r}
-str(swiss)
+Dataset:
 ```
 
 `movies` -- `ggplot2movies` package: 58788 rows, 24 variables
@@ -33,18 +25,4 @@ library(ggplot2movies)
 str(movies)
 ```
 
-### 1. Single boxplots
-
-Do any of the following:
-
-a) Draw a boxplot of the `Fertility` column in the `swiss` dataset.
-
-b) Draw a horizontal boxplot of the `length` variable of the `movies` dataset.
-
-### 2. Multiple boxplots
-
-a) Draw multiple boxplots of `Fertility` in the `swiss` dataset by `Education` group.
-
-b) Draw multiple boxplots of `length` in the `movies` dataset by `mpaa`.
-
-c) Filter / subset the data in b) to obtain clearer views of the trends.
+Draw ridgeline plots from the `movies` dataset, such as `length` by `year` (Filter / subset as appropriate).
