@@ -25,6 +25,7 @@
 3. Miscellany
     - Sensitivity Analyses
     - Instrumental Variables and ITT
+    - Time Varying Treatments
     - Regression Discontinuity
     - Case/Control Studies
     - Variable Selection
@@ -32,12 +33,12 @@
 
 - **Mandatory pre-assignment**:
 - 10:00am Lecture: [Overview](bootcamp_01.pdf)
-- 11:00am Lab session: [CI EDAV](lab_01.md)
+- 11:00am Lab session: [Causal Inference EDAV](lab_01.md)
 - 12:00pm Lunch Break
-- 1:00pm Lecture: xxx
-- 1:30pm Lab session: 
-- 2:30pm Break
-- 3:00pm Lecture: xxx
+- 1:00pm Lecture: [Methods](bootcamp_02.pdf)
+- 2:00pm Lab session: Applying Methods
+- 3:00pm Break
+- 3:30pm Lecture: Miscellany
 - [Further reading]
 
 ### Prerequisites
