@@ -1,0 +1,265 @@
+---
+title: "Continuous Variables"
+output: slidy_presentation
+---
+```{r setup, include=FALSE, cache=FALSE}
+library(knitr)
+library(tidyverse)
+options(digits = 3, scipen = 999)
+opts_chunk$set(fig.align='center', 
+               cache=TRUE, message = FALSE, 
+               echo = FALSE)
+opts_knit$set(global.par = TRUE)
+```
+
+## Continuous Variables
+We're looking for features such as:
+
+> - Asymmetry
+
+> - Outliers
+
+> - Multimodality
+
+> - Gaps
+
+> - Heaping / Rounding
+
+> - Impossibilities / Errors
+
+
+
+## Histograms
+
+- primary tool for continuous data
+
+> - count / relative frequency / density
+
+> - boundaries
+
+> - binwidth
+
+## How are histograms created?
+
+Draw a histogram on paper of the following data.  
+
+(use binwidth = 5)
+
+<h2>50, 51, 53, 55, 56, 60, 65, 65, 68</h2>
+
+## How are histograms created?
+
+<table><tr><td>
+```{r, fig.width = 4, fig.height = 3, echo = FALSE}
+par(las = 1)  # opts_knit$set(global.par = TRUE) above
+x <- c(50, 51, 53, 55, 56, 60, 65, 65, 68)
+hist(x, col = "lightblue")
+```
+</td><td>
+```{r, fig.width = 4, fig.height = 3, echo = FALSE}
+df <- data.frame(x)
+ggplot(df, aes(x)) + geom_histogram(color = "black", fill = "lightblue", binwidth = 5, center = 52.5)
+```
+</td></tr></table>
+
+
+## How are histograms created?
+
+```{r, fig.align = 'left'}
+x <- c(50, 51, 53, 55, 56, 60, 65, 65, 68)
+hist(x, col = "lightblue", right = FALSE, yaxt = "n")
+axis(2, at = 0:3)
+```
+
+## What is causing the difference?
+```{r, fig.width = 8}
+op <- par(mfrow = c(1, 2), las = 1)
+hist(x, col = "lightblue", ylim = c(0, 4))
+hist(x, col = "lightblue", right = FALSE, ylim = c(0, 4))
+par(op)
+```
+
+## Bin boundaries
+```{r, fig.width = 8}
+op <- par(mfrow = c(1, 2), las = 1)
+hist(x, col = "lightblue", ylim = c(0, 4),
+     xlab = "right closed ex. (55, 60]", font.lab = 2)
+hist(x, col = "lightblue", right = FALSE, ylim = c(0, 4),
+     xlab = "right open ex. [55, 60)", font.lab = 2)
+par(op)
+```
+
+## Bin boundaries
+```{r, fig.width = 6, fig.height = 4}
+# presentation issues
+hist(x, breaks = seq(47.5, 72.5, 5), col = "lightblue",
+     axes = FALSE)
+axis(1, at = seq(47.5, 72.5, 5))
+axis(2, at = 0:3, las = 1)
+```
+
+## Frequency (count) histogram 
+
+```{r}
+prices <- c(379, 425, 450, 450, 499, 529, 535, 535, 545, 599, 665, 675, 699, 699, 725, 725, 745, 799)
+x <- hist(prices, breaks = seq(300, 800, 100),
+          col = "lightblue", las = 1)
+options(digits = 5)
+df <- data.frame(mids = x$mids, freq = x$counts, 
+                 relfreq = x$counts/sum(x$counts), 
+                 density = x$density) 
+```
+
+Prices of one-bedroom apartments in Morningside Heights (zip 10027) in $1000k
+
+## Relative frequency histogram
+
+```{r}
+x <- barplot(df$relfreq, space = 0, col = "lightblue",
+             xlab = "prices",
+             ylab = "relative frequency", las = 1)
+# axis(1) to see the scale on the x-axis
+axis(1, at = 0:5, labels = seq(300, 800, 100))
+title("Relative Frequency Histogram of Prices")
+```
+
+## Density Histogram
+```{r}
+hist(prices, breaks = c(300, 400, 500, 600, 700, 800),
+     freq = FALSE, col = "lightblue", ylab = "",
+     main = "Density Histogram", las = 1)
+mtext("Density", side = 2, line = 4, las = 3)
+```
+
+## Count, Relative Frequency, Density
+```{r freq, eval = FALSE, echo = FALSE}
+kable(df)
+```
+
+|Bin|Count|Relative Frequency|Density|
+|:-----:|:-----:|:-----:|:-----:|
+|300-400|1|.056|.00056|
+|400-500|4|.22|.0022|
+|500-600|5|.28|.0028|
+|600-700|4|.22|.0022|
+|700-800|4|.22|.0022|
+
+> - How is relative frequency calculated?
+
+> - How is density calculated?
+
+
+
+## What's wrong with this histogram?
+```{r}
+# Use geom_col since we already have frequency counts
+# This is an example of what not to do
+df <- read.csv("../data/zip10027census2000.csv")
+df$age <- factor(df$age, levels = df$age)
+g0 <- ggplot(df, aes(x = age, y = pop)) + 
+    geom_col(width = 1, color = "blue", fill = "lightblue") +
+    ylab("count")
+g0
+```
+
+## Relative frequency histogram
+
+(still wrong...)
+
+```{r}
+# Doesn't fix the problem
+ggplot(df, aes(x = age, y = percent/100)) + 
+    geom_col(width = 1, color = "blue", fill = "lightblue") +
+    ylab("relative frequency")
+```
+
+## Density histogram with unequal bin (or class) widths
+```{r}
+g2 <- ggplot(df, aes(x = center, y = percent/(100*binwidth), 
+               width = binwidth)) + 
+    geom_col(color = "blue", fill = "lightblue") +
+    ylab("density") + xlab("age") +
+    scale_x_continuous(breaks = c(0, df$breaks)) +
+    ggtitle("Census 2000: Zip Code 10027")
+g2
+```
+
+## Density = RelFreq / Binwidth
+```{r}
+library(dplyr)
+kdf <- df %>% transmute(Class = age, Frequency = pop,
+                        RelFreq = round(pop/sum(pop),3),
+                        ClassWidth = binwidth,
+                        Density = round(RelFreq/ClassWidth,3))
+knitr::kable(kdf)
+```
+
+## Compare the histograms
+```{r, fig.height = 4}
+library(gridExtra)
+grid.arrange(g0 + ggtitle ("Incorrect"),
+             g2 + ggtitle ("Correct"))
+```
+
+Source:  https://factfinder.census.gov/
+
+## Binwidth
+
+<h2>`'stat_bin()' using 'bins = 30'. Pick better`
+`value with 'binwidth'.`</h2>
+
+## Histograms
+```{r}
+world <- read.csv("../data/countries2012.csv")
+hist(world$TFR, col = "lightblue",
+     main = "Total Fertility Rate", las = 1,
+     xlab = "average total births per woman, by country")
+```
+
+## Histograms
+```{r}
+hist(world$TFR, col = "lightblue",
+     main = "Total Fertility Rate", las = 1,
+     breaks = 10,
+     xlab = "average total births per woman, by country")
+```
+
+
+## Histograms
+```{r}
+hist(world$TFR, col = "lightblue",
+     main = "Total Fertility Rate", las = 1,
+     xlab = "average total births per woman, by country",
+     breaks = seq(1 , 8, .25))
+```
+
+## Histograms
+```{r}
+hist(world$TFR, col = "lightblue",
+     main = "Total Fertility Rate", las = 1,
+     xlab = "average total births per woman, by country",
+     breaks = seq(1 , 8, .125))
+```
+
+## Histograms
+```{r}
+df <- data.frame(scores = c(35, 59, 61, 64, 66, 66, 70, 72, 73, 74,
+                            75, 76, 76, 78, 79, 80, 80, 81, 81, 82, 
+                            82, 82, 84, 86, 86, 88, 88, 88, 88, 89, 
+                            89, 90, 91,91, 92, 92, 92, 92, 94, 94, 
+                            94, 94, 96, 98, 102))
+ggplot(df, aes(x = scores)) + 
+    geom_histogram(color = "blue", fill = "lightblue") +
+    scale_x_continuous(breaks = seq(30, 100, 10)) +
+    ggtitle("Test Scores")
+```            
+            
+## Fewer bins
+```{r}
+ggplot(df, aes(x = scores)) + 
+    geom_histogram(color = "blue", fill = "lightblue",
+                   breaks = seq(30, 110, 10)) +
+        scale_x_continuous(breaks = seq(30, 110, 10))
+```
+
+

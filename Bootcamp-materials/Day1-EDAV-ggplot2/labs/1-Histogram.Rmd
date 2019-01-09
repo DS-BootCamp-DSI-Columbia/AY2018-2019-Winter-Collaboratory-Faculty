@@ -15,6 +15,61 @@ For help, see `?geom_histogram` and/or
 
 https://edav.info/histo.html#parameters
 
+## Examples
+
+```{r}
+scores <- c(35, 59, 61, 64, 66, 66, 70, 72, 73, 74,
+            75, 76, 76, 78, 79, 80, 80, 81, 81, 82, 
+            82, 82, 84, 86, 86, 88, 88, 88, 88, 89, 
+            89, 90, 91, 91, 92, 92, 92, 92, 94, 94, 
+            94, 94, 96, 98, 102)
+
+# ggplot2 only works with data frames / tibbles
+
+df <- data.frame(scores)
+
+ggplot(df, aes(x = scores)) + 
+    geom_histogram(color = "blue",
+                   fill = "lightblue") +
+    ggtitle("Test Scores")
+```
+
+### Change binwidth
+
+```{r}
+ggplot(df, aes(x = scores)) + 
+    geom_histogram(binwidth = 10,
+                   color = "blue",
+                   fill = "lightblue") +
+    ggtitle("Test Scores")
+```
+
+### Change boundary
+
+```{r}
+ggplot(df, aes(x = scores)) + 
+    geom_histogram(binwidth = 10,
+                   boundary = 40,
+                   color = "blue",
+                   fill = "lightblue") +
+  ggtitle("Test Scores")
+```
+
+### Change x-axis breaks
+
+```{r}
+ggplot(df, aes(x = scores)) + 
+    geom_histogram(binwidth = 10,
+                   boundary = 40,
+                   color = "blue",
+                   fill = "lightblue") +
+  scale_x_continuous(breaks = seq(30, 110, 10)) +
+  ggtitle("Test Scores")
+```
+
+
+## Exercises
+
 ### 1. Frequency histograms
 
 Choose one of the following datasets:
@@ -34,11 +89,10 @@ library(ggplot2movies)
 str(movies)
 ```
 
-Draw histograms of individual variables. Experiment with changing the bin width and center.
+Draw histograms of individual variables. Experiment with changing the binwidth and center.
 
 ```{r}
 library(ggplot2)
-
 ```
 
 ### 2. Add title and axis labels

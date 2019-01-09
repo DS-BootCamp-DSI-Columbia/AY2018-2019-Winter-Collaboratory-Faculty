@@ -7,7 +7,10 @@
 
 - When: Wednesday, January 9th, 2019
 - Where: Room 425, [Riverside Church](../../Misc-files/directions.pdf)
-
+- Instructor info: Joyce Robbins  
+email: jtr13@columbia.edu  
+Twitter: [\@jtrnyc](https://twitter.com/jtrnyc)   
+GitHub: [jtr13](https://github.com/jtr13)
 
 ### Mandatory pre-assignment:
 
@@ -30,9 +33,8 @@ If you're new to ggplot2, please read ["Data Visualization"](https://r4ds.had.co
 10:00am - 11:00am Lecture: 
 
 * Introduction to Exploratory Data Analysis
-* Grammar of Graphics
-* Continuous Variables
-* Categorical Variables
+* Grammar of graphics
+* Continuous variables
 
 11:00am - 12:00pm Lab
 
@@ -40,9 +42,9 @@ If you're new to ggplot2, please read ["Data Visualization"](https://r4ds.had.co
 
 1:00pm - 1:45pm Lecture: 
 
-* Multivariate analysis with faceting
+* Categorical variables
 * Transforming data for visualization
-* Communicating results
+* Multivariate analysis with faceting
 
 1:45pm - 2:30pm Lab
 
