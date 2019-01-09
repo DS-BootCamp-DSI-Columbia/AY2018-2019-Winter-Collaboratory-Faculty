@@ -34,31 +34,31 @@ library(ggplot2movies)
 str(movies)
 ```
 
-
-a) For which variables would a histogram be appropriate?
-
-
-b) Draw histograms of individual variables. Experiment with changing the bin width and center.
+Draw histograms of individual variables. Experiment with changing the bin width and center.
 
 ```{r}
 library(ggplot2)
 
 ```
 
-Insert new chunks with *option + command + i* 
+### 2. Add title and axis labels
+
+Choose one graph and add a title and clear x and y axis labels (Use `?swiss` or `?movies` for more info about the datasets.)
+
+### 3. Density histograms
+
+Chooose one variable and create a density histogram with `geom_histogram(aes(y = ..density..))`
 
 
-c) Choose one graph and add a title and clear x and y axis labels (Use `?swiss` or `?movies` for more info about the datasets.)
+### 4. Density curve
 
-### 2. Density Histograms
+Add a density curve with `+ geom_density()`
 
-a) Chooose one variable and create a density histogram with `geom_histogram(aes(y = ..density..))`
+### 5. Normal curve
 
-b) Add a density curve with `+ geom_density()`
+Challenge: Add a normal distribution curve. (Hint: see `?stat_function`).
 
-c) Challenge: Add a normal distribution curve. (Hint: see `?stat_function`).
-
-### 3. Density Curves
+### 6. Multiple density curves
 
 Demo:
 
@@ -75,5 +75,5 @@ ggplot(swiss2, aes(x = Fertility,
   theme_classic()
 ```
 
-Compare density curves for Action vs. non-Action movies. (Hint: convert the `Action` column to a factor)
+Compare density curves for `length` of Action vs. non-Action movies. (Hint: convert the `Action` column to a factor)
 

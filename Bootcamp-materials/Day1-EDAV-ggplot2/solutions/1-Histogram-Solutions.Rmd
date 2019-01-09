@@ -1,0 +1,148 @@
+---
+title: "Histogram Solutions"
+author: 
+date: January 9, 2019
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      warning = FALSE,
+                      message = FALSE)
+```
+
+For help, see `?geom_histogram` and/or
+
+https://edav.info/histo.html#parameters
+
+### 1. Frequency histograms
+
+Choose one of the following datasets:
+
+`swiss` -- built-in base R: 47 rows, 6 variables
+
+```{r}
+str(swiss)
+```
+
+`movies` -- `ggplot2movies` package: 58788 rows, 24 variables
+
+```{r}
+# uncomment and run once:
+# install.packages("ggplot2movies")
+library(ggplot2movies)
+str(movies)
+```
+
+
+Draw histograms of individual variables. Experiment with changing the bin width and center.
+
+```{r}
+library(ggplot2)
+ggplot(swiss, aes(Education)) + geom_histogram()
+```
+
+```{r}
+ggplot(swiss, aes(Education)) +
+  geom_histogram(color = "grey50",
+                 fill = "lightblue",
+                 binwidth = 5)
+```
+
+```{r}
+ggplot(swiss, aes(Education)) +
+  geom_histogram(color = "grey50",
+                 fill = "lightblue",
+                 binwidth = 5,
+                 boundary = 0)
+```
+
+### 2. Add title and axis labels
+
+Choose one graph and add a title and clear x and y axis labels (Use `?swiss` or `?movies` for more info about the datasets.)
+
+```{r}
+ggplot(swiss, aes(Education)) +
+  geom_histogram(color = "grey50",
+                 fill = "lightblue",
+                 binwidth = 5,
+                 boundary = 0) +
+  xlab("Education (as % beyond primary school for draftees)") + ylab("number of provinces") +
+  ggtitle("Histogram of Draftee Education", sub =  "French-Speaking Provinces, Switzerland, 1888") +
+  theme_grey(14) +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank())
+```
+
+### 3. Density histograms
+
+Chooose one variable and create a density histogram with `geom_histogram(aes(y = ..density..))`
+
+```{r}
+g <- ggplot(swiss, aes(Education)) +
+  geom_histogram(aes(y = ..density..),
+                 color = "grey50",
+                 fill = "lightblue",
+                 binwidth = 5,
+                 boundary = 0) +
+  xlab("Education (as % beyond primary school for draftees)") + 
+  ggtitle("Histogram of Draftee Education", sub =  "French-Speaking Provinces, Switzerland, 1888") +
+  theme_grey(14) +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank())
+g
+```
+
+
+### 4. Density curves
+
+Add a density curve with `+ geom_density()`
+
+```{r}
+g + geom_density(size = 1.5)
+```
+
+### 5. Normal curve
+
+Challenge: Add a normal distribution curve. (Hint: see `?stat_function`).
+
+```{r}
+g + geom_density(size = 1.2) +
+  stat_function(fun = dnorm,
+                args = list(mean = mean(swiss$Education),
+                            sd = sd(swiss$Education)),
+                color = "red",
+                size = 1.2)
+```
+
+
+### 6. Multiple density curves
+
+Demo:
+
+```{r}
+library(dplyr)
+swiss2 <- swiss %>% 
+  mutate(edulevel = ifelse(Education < 9, 
+                           "less than eight", 
+                           "nine or more"))
+
+ggplot(swiss2, aes(x = Fertility, 
+                   color = edulevel, 
+                   fill = edulevel)) +
+  geom_density(alpha = .2) + 
+  theme_classic()
+```
+
+Compare density curves for `length` of Action vs. non-Action movies. (Hint: convert the `Action` column to a factor)
+
+```{r}
+movies2 <- movies %>% filter(length < 180)
+
+ggplot(movies2, aes(length, 
+                   color = factor(Action), 
+                   fill = factor(Action))) +
+  geom_density(alpha = .4) +
+  theme_classic()
+```
+

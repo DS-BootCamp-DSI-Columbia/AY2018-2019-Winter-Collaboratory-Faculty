@@ -1,8 +1,8 @@
 ---
-title: "Boxplots"
+title: "Boxplot"
 author: 
 date: January 9, 2019
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -18,32 +18,28 @@ https://edav.info/box.html
 
 Datasets:
 
-`swiss` -- built-in base R: 47 rows, 6 variables
-
-```{r}
-str(swiss)
-```
-
 `movies` -- `ggplot2movies` package: 58788 rows, 24 variables
 
 ```{r}
 # uncomment and run once:
 # install.packages("ggplot2movies")
-library(ggplot2movies)
-str(movies)
 ```
+
+Data: `countries2012.csv` 
+
+Available in the data folder, direct link:
+
+https://github.com/DS-BootCamp-DSI-Columbia/AY2018-2019-Winter-Collaboratory-Faculty/blob/master/Bootcamp-materials/Day1-EDAV-ggplot2/data/countries2012.csv
 
 ### 1. Single boxplots
 
-Do any of the following:
-
-a) Draw a boxplot of the `Fertility` column in the `swiss` dataset.
+a) Draw a boxplot of the `TFR` (total fertility rate) column in the countries dataset.
 
 b) Draw a horizontal boxplot of the `length` variable of the `movies` dataset.
 
 ### 2. Multiple boxplots
 
-a) Draw multiple boxplots of `Fertility` in the `swiss` dataset by `Education` group.
+a) Draw multiple boxplots of `TFR` in the countries dataset by `CONTINENT`.
 
 b) Draw multiple boxplots of `length` in the `movies` dataset by `mpaa`.
 
