@@ -15,6 +15,12 @@ For help, see `?boxplot`, `?geom_boxplot` and/or
 
 https://edav.info/box.html
 
+Note: Boxplots with ggplot2 require an x (group) *and* y (continuous variable) even if there's just one group. Therefore, I suggest using base R for single boxplots:
+
+```{r}
+boxplot(iris$Sepal.Length)
+```
+
 
 Datasets:
 

@@ -2,7 +2,7 @@
 title: "Scatterplots"
 author: 
 date: January 9, 2019
-output: github_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -12,13 +12,24 @@ knitr::opts_chunk$set(echo = TRUE,
 ```
 
 
-### Taxis
+## Taxis
 
 Data: NYC yellow cab rides in June 2018, available here: http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml
 
-It's a large file so work with a random subset of the data.  
 
-Draw four scatterplots of `tip_amount` vs. `far_amount` with the following variations. For all, adjust parameters to the levels that provide the best views of the data.
+Either: 
+
+Read in the file and save a random subset of the data to work with
+
+or
+
+use the subset in the data folder:
+
+https://github.com/DS-BootCamp-DSI-Columbia/AY2018-2019-Winter-Collaboratory-Faculty/blob/master/Bootcamp-materials/Day1-EDAV-ggplot2/data/taxidata.csv
+
+
+
+Draw four plots of `tip_amount` vs. `far_amount` with the following variations. For all, adjust parameters to the levels that provide the best views of the data.
 
 ### 1. Points with alpha blending
 

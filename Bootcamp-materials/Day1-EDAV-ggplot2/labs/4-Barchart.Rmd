@@ -11,6 +11,10 @@ knitr::opts_chunk$set(echo = TRUE,
                       message = FALSE)
 ```
 
+Help:
+
+https://github.com/jtr13/codehelp/blob/master/R/reorder.md
+
 
 ### 1. Recoding
 
@@ -26,7 +30,5 @@ Help: `?fct_recode`
 
 Create frequency bar charts for the `color` and `soil` variables, using best practices for the order of the bars.
 
-Help:
 
-https://github.com/jtr13/codehelp/blob/master/R/reorder.md
 
