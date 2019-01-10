@@ -1,7 +1,7 @@
 ![collaboratory logo](../../Misc-files/collaboratory2.png)
 
 ## [Collaboratory@Columbia](http://collaboratory.columbia.edu/)
-### Columbia [Data Science Institute](http://datascience.columbia.edu/) and [Columbia Enterpreneuship](http://entrepreneurship.columbia.edu/)
+### Columbia [Data Science Institute](http://datascience.columbia.edu/) and [Columbia Entrepreneurship](http://entrepreneurship.columbia.edu/)
 ## Winter 2018-2019 Data Science Bootcamp
 ### Day 2 Statistical Methods for Causal Reasoning with Observational Data
 
@@ -18,28 +18,23 @@
     - Overlap and Alignment
 2. Methods for Causal Inference
     - Nonparametric Tests
-    - Propensity Scores
-    - Matching, Weighting, and Stratification
+    - Matching
+    - Propensity Scores, Stratification, and Weighting
     - Regression
     - Structural Equation Modeling
 3. Miscellany
     - Sensitivity Analyses
     - Instrumental Variables and ITT
-    - Time Varying Treatments
-    - Regression Discontinuity
-    - Case/Control Studies
     - Variable Selection
-    - Individual Effects
+    - Regression Discontinuity
 
-- **Mandatory pre-assignment**:
 - 10:00am Lecture: [Overview](bootcamp_01.pdf)
 - 11:00am Lab session: [Causal Inference EDAV](lab_01.md)
 - 12:00pm Lunch Break
 - 1:00pm Lecture: [Methods](bootcamp_02.pdf)
-- 2:00pm Lab session: Applying Methods
+- 2:00pm Lab session: [Applying Methods](lab_02.md)
 - 3:00pm Break
-- 3:30pm Lecture: Miscellany
-- [Further reading]
+- 3:30pm Lecture: [Miscellany](bootcamp_03.pdf)
 
 ### Prerequisites
  
@@ -57,4 +52,3 @@ To get started here are some online resources for programming skills in R and fo
 
 + [DataCamp's free R Tutorial](https://www.datacamp.com/courses/free-introduction-to-r)
 
-[more]

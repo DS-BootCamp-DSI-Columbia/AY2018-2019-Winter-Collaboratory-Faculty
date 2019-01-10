@@ -1,7 +1,7 @@
 ![collaboratory logo](../../Misc-files/collaboratory2.png)
 
 ## [Collaboratory@Columbia](http://collaboratory.columbia.edu/)
-### Columbia [Data Science Institute](http://datascience.columbia.edu/) and [Columbia Enterpreneuship](http://entrepreneurship.columbia.edu/)
+### Columbia [Data Science Institute](http://datascience.columbia.edu/) and [Columbia Entrepreneurship](http://entrepreneurship.columbia.edu/)
 ## Winter 2018-2019 Data Science Bootcamp
 ### Day 2 Statistical Methods for Causal Reasoning with Observational Data
 ### Lab 1: Causal Inference EDAV
