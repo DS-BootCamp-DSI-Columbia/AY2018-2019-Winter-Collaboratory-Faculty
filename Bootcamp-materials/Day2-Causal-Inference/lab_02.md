@@ -44,6 +44,8 @@ data(lalonde, package = "MatchIt")
 with(lalonde, mean(re78[treat == 1]) - mean(re78[treat == 0]))
 
 # control for obvious confounders, but do a regression model
+# with a constant treatment effect (the model just contains "treat"), the effect
+# itself is just the regression coefficient and can be read off of the summary
 summary(lm(re78 ~ treat + age + educ + black + hispan + married + nodegree +
            re74 + re75, data = lalonde))
 ```
@@ -156,7 +158,19 @@ At this point, it would be a good idea to play with the above. Some suggestions:
 1. Explore the options for `matchit` and try different matching algorithms with different parameters. You can see those options by entering `?matchit`.
 2. Try different ways of estimating the propensity score, for example using generalized additive models and the `mgcv` package.
 3. Try a nonparametric approach such as using the package `tmle`.
-4. Consider non-constant treatment effect models. You can modify any of the above by interacting `treat` with another variable (for example, adding `treat:age` to a formula). Calculating treatment effects becomes a bit harder, since you will then have to average the predictions across the sample population.
+4. Consider non-constant treatment effect models. You can modify any of the above by interacting `treat` with another variable (for example, adding `treat:married` to a formula). Calculating treatment effects becomes a bit harder, since you will then have to average the predictions across the sample population. For example:
+
+```R
+nonConstantFit <-
+  lm(re78 ~ treat + age + educ + black + hispan + married + nodegree +
+     re74 + re75 + treat:married, data = nearest.data)
+
+nearest.data.trt <- nearest.data
+nearest.data.trt$treat <- 1
+nearest.data.ctl <- nearest.data
+nearest.data.ctl$treat <- 0
+mean(predict(nonConstantFit, nearest.data.trt) - predict(nonConstantFit, nearest.data.ctl))
+```
 
 #### Further Reading
 
