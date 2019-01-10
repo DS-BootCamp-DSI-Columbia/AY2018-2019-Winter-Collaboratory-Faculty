@@ -156,6 +156,7 @@ At this point, it would be a good idea to play with the above. Some suggestions:
 1. Explore the options for `matchit` and try different matching algorithms with different parameters. You can see those options by entering `?matchit`.
 2. Try different ways of estimating the propensity score, for example using generalized additive models and the `mgcv` package.
 3. Try a nonparametric approach such as using the package `tmle`.
+4. Consider non-constant treatment effect models. You can modify any of the above by interacting `treat` with another variable (for example, adding `treat:age` to a formula). Calculating treatment effects becomes a bit harder, since you will then have to average the predictions across the sample population.
 
 #### Further Reading
 
