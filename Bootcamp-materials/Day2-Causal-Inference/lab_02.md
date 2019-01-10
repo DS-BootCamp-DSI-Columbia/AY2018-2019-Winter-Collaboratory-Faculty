@@ -123,7 +123,7 @@ summary(lm(re78 ~ treat + age + educ + black + hispan + married + nodegree +
 
 Note that the stabilized weights don't really seem to change the balance picture but do change the estimate.
 
-One thing we haven't talked much about is what estimand is of interest. The above computes weights useful to compute the average treatment effect (ATE) across the sample, but we could also look at the average treatment on the treated (ATT). Because the treated units come from one population and the controls from another, this data set is ideal for trying to match controls to treated, or to compute the ATE. Compute those weights using the formula $$w = z + (1 - z) e / (1 - e)$$.
+One thing we haven't talked much about is what estimand is of interest. The above computes weights useful to compute the average treatment effect (ATE) across the sample, but we could also look at the average treatment on the treated (ATT). Because the treated units come from one population and the controls from another, this data set is ideal for trying to map control observations onto the treated (think of the treated as fixed), as when computing the ATT. Compute the ATT weights using the formula $$w = z + (1 - z) e / (1 - e)$$ and see how the estimand changes.
 
 #### Nearest Neighbor Matching
 
