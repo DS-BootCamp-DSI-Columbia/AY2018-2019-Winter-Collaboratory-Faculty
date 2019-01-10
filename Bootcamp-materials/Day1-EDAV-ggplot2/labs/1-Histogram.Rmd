@@ -15,9 +15,11 @@ For help, see `?geom_histogram` and/or
 
 https://edav.info/histo.html#parameters
 
+
 ## Examples
 
 ```{r}
+library(tidyverse)
 scores <- c(35, 59, 61, 64, 66, 66, 70, 72, 73, 74,
             75, 76, 76, 78, 79, 80, 80, 81, 81, 82, 
             82, 82, 84, 86, 86, 88, 88, 88, 88, 89, 
