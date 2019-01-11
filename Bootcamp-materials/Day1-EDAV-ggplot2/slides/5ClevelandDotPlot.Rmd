@@ -1,0 +1,69 @@
+---
+title: "Cleveland Dot Plots"
+author: "Joyce Robbins"
+date: January 9, 2019
+output: github_document
+---
+
+
+```{r setup, include=FALSE, cache=FALSE}
+library(knitr)
+options(digits = 3, scipen = 999)
+opts_chunk$set(fig.align='center',
+               message = FALSE, 
+               warning = FALSE, echo = TRUE)
+```
+
+```{r CDPtheme}
+## Cleveland Dot Plot theme
+library(tidyverse)
+theme_dotplot <- theme_bw(18) +
+    theme(axis.text.y = element_text(size = rel(.75)),
+          axis.ticks.y = element_blank(),
+          axis.title.x = element_text(size = rel(.75)),
+          panel.grid.major.x = element_blank(),
+          panel.grid.major.y = element_line(size = 0.5),
+          panel.grid.minor.x = element_blank())
+```
+
+
+```{r, fig.height = 8}
+world <-  read_csv("../data/countries2012.csv")
+africa <- world %>% filter(CONTINENT == "Africa")
+g <- ggplot(africa, aes(x = GDP, y = fct_reorder(COUNTRY, GDP))) +
+    geom_point(color = "blue") + ylab("") +
+    theme_dotplot + ggtitle("Africa: GDP per capita, 2012")
+g
+```
+
+
+## Cleveland Dot Plot with Multiple Dots
+
+```{r, fig.height=8}
+library(AER)
+data("USSeatBelts")
+belts <- USSeatBelts %>% 
+    filter(year %in% c(1983, 1997)) %>% 
+    select(state, year, fatalities) 
+ 
+ggplot(belts, aes(x = fatalities, 
+                  y = fct_reorder2(state, year, -fatalities), 
+                  color = year)) + 
+    geom_point() + ylab("") + theme_dotplot + 
+    ggtitle("Number of fatalities per million traffic miles")
+```
+
+## Large number of categories 
+
+Scroll
+
+In chunk options: `{r fig.height = 20}`
+
+```{r ggdot, fig.height = 20, echo = FALSE, message = FALSE}
+
+g <- ggplot(world, aes(x = GDP, y = fct_reorder(COUNTRY, GDP))) +
+    geom_point(color = "blue") + ylab("") +
+    theme_dotplot
+g
+```
+

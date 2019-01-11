@@ -1,0 +1,85 @@
+---
+title: "Facetting"
+author: "Joyce Robbins"
+date: January 9, 2019
+output: github_document
+---
+```{r setup, include=FALSE, cache=FALSE}
+library(knitr)
+options(digits = 3, scipen = 999)
+opts_chunk$set(message = FALSE, 
+               warning = FALSE)
+```
+
+### Data
+
+For these examples, we'll use the `SpeedSki` dataset in the `GDAdata` package:
+
+
+```{r}
+library(GDAdata)
+str(SpeedSki)
+```
+
+
+### Without facetting
+
+A basic scatterplot of `Speed` vs `Year`:
+
+```{r}
+library(ggplot2)
+ggplot(SpeedSki, aes(Year, Speed)) +
+  geom_point() +
+  xlab("Skier's year of bith") +
+  ylab("Speed achieved in km/hr") + 
+  ggtitle("World Speed Skiing Competition",
+          sub = "Verbier 21st April, 2011") +
+  theme_grey(14)  # increases font sizes
+```
+
+### Facet on `Event`
+
+```{r}
+ggplot(SpeedSki, aes(Year, Speed)) +
+  geom_point() +
+  facet_wrap(~Event) +
+  xlab("Skier's year of bith") +
+  ylab("Speed achieved in km/hr") + 
+  ggtitle("World Speed Skiing Competition",
+          sub = "Verbier 21st April, 2011") +
+  theme_grey(14) 
+```
+
+### Facet on number of runs and `Event`
+
+```{r}
+library(forcats)
+ski <- SpeedSki
+ski$Runs <- fct_recode(factor(ski$no.of.runs),
+                       `1 run` = "1",`2 runs` = "2",
+                       `3 runs` = "3",`4 runs` = "4")
+
+ggplot(ski, aes(Year, Speed)) +
+  geom_point() +
+  facet_grid(Runs~Event) +
+  xlab("Skier's year of bith") +
+  ylab("Speed achieved in km/hr") + 
+  ggtitle("World Speed Skiing Competition",
+          sub = "Verbier 21st April, 2011") +
+  theme_grey(14) 
+```
+
+### Try again
+
+Patterns (speeds achieved increase w/ number of runs) are much clearer if facetting rows and columns are switched:
+
+```{r}
+ggplot(ski, aes(Year, Speed)) +
+  geom_point() +
+  facet_grid(Event~Runs) +
+  xlab("Skier's year of bith") +
+  ylab("Speed achieved in km/hr") + 
+  ggtitle("World Speed Skiing Competition",
+          sub = "Verbier 21st April, 2011") +
+  theme_grey(14) 
+```
